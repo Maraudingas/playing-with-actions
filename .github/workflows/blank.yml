@@ -43,3 +43,12 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: Stage    
+    steps:
+      - name: deploy to STAGE
+        run: echo "Deploying to Stage"
