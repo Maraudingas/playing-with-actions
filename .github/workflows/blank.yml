@@ -63,4 +63,4 @@ jobs:
       TESTING_SECRET: ${{ secrets.TESTING_SECRET }}
     steps:
       - name: deploy to Production
-        run: echo 'Big secret of production = $TESTING_SECRET'
+        run: echo "Big secret of production = $TESTING_SECRET"
