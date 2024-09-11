@@ -44,7 +44,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-  staging:
+  Staging:
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -54,11 +54,11 @@ jobs:
     steps:
       - name: deploy to Stage
         run: echo "Big secret of Stage = $TESTING_SECRET"
-  production:
-    needs: build
+  Production:
+    needs: Staging
     runs-on: ubuntu-latest
     environment:
-      name: production    
+      name: Production    
     env:
       TESTING_SECRET: ${{ secrets.TESTING_SECRET }}
     steps:
